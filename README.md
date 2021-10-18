@@ -22,17 +22,22 @@ Requirements:
 - yarn (use `yarn add <npm_module>` instead of `npm install <npm_module>`)
 
 ### Installations
+incase  docker-compose up returns error
 for simple installation React
-	-cd client
-	-yarn install
-	-yarn start[(port:3000)
+```bash
+	cd client
+	yarn install
+	yarn start   (port:3000)
+```
 
 for simple installation Server
-	-cd server
-	-yarn install
-	-yarn start(port:4000)
+```bash
+	cd server
+	yarn install
+	yarn start   (port:4000)
+  ```
 	
-	-ts.config for more setup in strict
+ts.config for more setup in strict
 
 #### Mongodb Installation
 
