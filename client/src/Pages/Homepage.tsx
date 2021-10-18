@@ -38,7 +38,7 @@ const Homepage: React.FC = () => {
   });
   }
 
-  const handleUpdateDrinks = (drinks: IDrinks): void => {   //updating the drinks
+  const handleUpdateDrinks = (drinks: IDrinks): void => {
       updateDrinks(drinks)
       .then(({ status, data }) => {
           if (status !== 200) {
@@ -49,20 +49,20 @@ const Homepage: React.FC = () => {
         .catch((err) => console.log(err))
     }
 
-    const handleDeleteDrinks = (_id: string): void => {
-      deleteDrinks(_id)
-      .then(({ status, data }) => {
-          if (status !== 200) {
-            throw new Error('Error! Todo not deleted')
-          }
-          setDrinks(data.drinks)
-        })
-        .catch((err) => console.log(err))
-    }
+  const handleDeleteDrinks = (_id: string): void => {
+    deleteDrinks(_id)
+    .then(({ status, data }) => {
+        if (status !== 200) {
+          throw new Error('Error! Todo not deleted')
+        }
+        setDrinks(data.drinks)
+      })
+      .catch((err) => console.log(err))
+  }
 
-    const handleGenerateDrinks = (_id : any): any => {
-      return  setId(_id);
-    }
+  const handleGenerateDrinks = (_id : any): any => {
+    return  setId(_id);
+  }
 
   return (
     <main className='App'>
@@ -83,7 +83,7 @@ const Homepage: React.FC = () => {
         color="#00BFFF"
         height={100}
         width={100}
-        timeout={90000} //3 secs
+        timeout={9000}//9 secs
       />
       }
 

@@ -46,7 +46,7 @@ const buyDrinksById = async(req: Request , res : Response ) : Promise<void> => {
                     deductSum = req.body.money - remainder;
                     break;
                 }
-            
+
             case 'pepsi':
                 if(money < 25){
                     numOfDrinks = 0;
@@ -140,7 +140,6 @@ const returnDrinksById = async(req: Request , res : Response ) : Promise<void> =
         throw error;
     }
 }
-
 
 const addDrinks = async (req: Request, res: Response): Promise<void> => {
     try {

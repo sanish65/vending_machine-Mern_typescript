@@ -22,9 +22,7 @@ import 'react-toastify/dist/ReactToastify.css';
 interface IShopID  {
   id : string,
 }
-
 const Shopppage = ( id : IShopID ) => {
-
   const styles = makeStyles(() => ({
     main : {
       marginTop : 20,
@@ -58,11 +56,9 @@ const Shopppage = ( id : IShopID ) => {
       width: 200,
       objectFit: 'cover'
     },
-
     button : {
       margin : '15px 15px',
     },
-
     textfield : {
       padding : '0px 35px',
     },
@@ -72,8 +68,6 @@ const Shopppage = ( id : IShopID ) => {
   const classes = styles();
   const [drinks, setDrinks] = useState<IDrinks>();
   const [money , setMoney] = useState<string>('');
-  // const [numbr , setNumbr] = useState<string>('');
-
 
   useEffect(()=> {
     fetchDrinkById(id);
@@ -88,12 +82,6 @@ const Shopppage = ( id : IShopID ) => {
   const handleMoney  = ( e: React.ChangeEvent<HTMLInputElement> ) => {
     setMoney(e.currentTarget.value);
   }
-
-  // const handleNumbr  = ( e: React.ChangeEvent<HTMLInputElement> ) => {
-  //   setNumbr(e.currentTarget.value);
-  // }
-
-
 
   const buyNow = ( drink : string , money: string, id : any) => {
     const params = {
@@ -111,46 +99,45 @@ const Shopppage = ( id : IShopID ) => {
       .catch((err: Error) => console.log(err))
     }
 
-    const refundNow = ( drink : string ,  id: any ) => {
-      const params = {
-        drink,id
-      }
-      returnDrinksById(params)
-      .then(({ data: { drinks , money } }: IDrinks[] | any) =>
-        { 
-          if(drinks == 0 && money === 0 ){
-            notifyReturn(drink , money);
-          }
-          else{
-            setDrinks(drinks);
-            notifyReturn(drink , money);
-            fetchDrinkById(id);
-          }
-         
-        })
-      .catch((err: Error) => console.log(err))
+  const refundNow = ( drink : string ,  id: any ) => {
+    const params = {
+      drink,id
     }
+    returnDrinksById(params)
+    .then(({ data: { drinks , money } }: IDrinks[] | any) =>
+      { 
+        if(drinks == 0 && money === 0 ){
+          notifyReturn(drink , money);
+        }
+        else{
+          setDrinks(drinks);
+          notifyReturn(drink , money);
+          fetchDrinkById(id);
+        }
+      })
+    .catch((err: Error) => console.log(err))
+  }
 
-    const notify = (drink : string , remainder : number , numOfDrinks : number) => {
-      if(numOfDrinks === 0){
-        toast(`Not sufficient balance.`);
-        toast(`Money returned : ${remainder} `)
-      }
-      else{
-        toast(`${numOfDrinks} units of ${drink} purchased.`);
-        toast(`Money returned : ${remainder} `);
-      }
+  const notify = (drink : string , remainder : number , numOfDrinks : number) => {
+    if(numOfDrinks === 0){
+      toast(`Not sufficient balance.`);
+      toast(`Money returned : ${remainder} `)
     }
+    else{
+      toast(`${numOfDrinks} units of ${drink} purchased.`);
+      toast(`Money returned : ${remainder} `);
+    }
+  }
 
-    const notifyReturn = (drink : string , money : number) => {
-      if(money === 0){
-        toast("Unable to return the drink");      
-      }
-      else{
-        toast(` 1 unit of ${drink} returned.`);
-        toast(`Money returned ${money} `);
-      }
+  const notifyReturn = (drink : string , money : number) => {
+    if(money === 0){
+      toast("Unable to return the drink");      
     }
+    else{
+      toast(` 1 unit of ${drink} returned.`);
+      toast(`Money returned ${money} `);
+    }
+  }
 
   return (
     <>
@@ -226,7 +213,6 @@ const Shopppage = ( id : IShopID ) => {
            </CardActions>
        </Card>
        </>
-
         ) : "something went wrong" }
 
         <ToastContainer
@@ -289,19 +275,6 @@ const Shopppage = ( id : IShopID ) => {
           <Typography gutterBottom variant="h5" component="h2">
               Return & Refund
           </Typography>
-
-          {/* <TextField 
-          className = {classes.textfield}
-            type="number"
-            id="numbr'"
-            value={numbr} 
-            onChange={handleNumbr} 
-            placeholder="put units here"
-            /> */}
-{/* 
-          <Typography gutterBottom variant="h6" component="h2">
-              You bought : {drinks?.coke} cokes
-          </Typography>     */}
           <Button 
               className={classes.button}
               size="medium" 
@@ -311,10 +284,6 @@ const Shopppage = ( id : IShopID ) => {
               }>
               coke
           </Button>
-{/* 
-          <Typography gutterBottom variant="h6" component="h2">
-              You bought : {drinks?.dew} dew
-          </Typography>   */}
           <Button 
               className={classes.button}
               size="medium" 
@@ -333,9 +302,6 @@ const Shopppage = ( id : IShopID ) => {
               }>
               dew
           </Button>
-          {/* <Typography gutterBottom variant="h6" component="h2">
-              You bought : {drinks?.pepsi} pepsi
-          </Typography>   */}
         </Card>
     </main>
     </>

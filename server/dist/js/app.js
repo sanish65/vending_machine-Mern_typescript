@@ -12,7 +12,6 @@ const app = (0, express_1.default)();
 app.use(body_parser_1.default.json());
 const PORT = process.env.PORT || 4000;
 app.use((0, cors_1.default)());
-app.use(index_1.todoRoutes);
 app.use('/drinks', index_1.drinksRoutes);
 const uri = 'mongodb://localhost:27017/OutSideTechsolutions';
 const options = { useNewUrlParser: true, useUnifiedTopology: true };

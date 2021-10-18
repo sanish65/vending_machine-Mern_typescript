@@ -13,11 +13,9 @@ const PORT: string | number = process.env.PORT || 4000
 
 app.use(cors())
 
-app.use(todoRoutes)
-
 app.use('/drinks', drinksRoutes);
 
-const uri: string = 'mongodb://mongo:27017/OutSideTechsolutions';
+const uri: string = 'mongodb://localhost:27017/OutSideTechsolutions';
 const options = { useNewUrlParser: true, useUnifiedTopology: true }
 mongoose.set('useFindAndModify', false)
 
