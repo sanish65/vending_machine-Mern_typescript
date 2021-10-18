@@ -71,7 +71,7 @@ const Shopppage = ( id : IShopID ) => {
 
   useEffect(()=> {
     fetchDrinkById(id);
-  },[]);
+  },[id]);
 
   const fetchDrinkById = (id : any ): void => {   
     getDrinksById(id.id)
@@ -106,7 +106,7 @@ const Shopppage = ( id : IShopID ) => {
     returnDrinksById(params)
     .then(({ data: { drinks , money } }: IDrinks[] | any) =>
       { 
-        if(drinks == 0 && money === 0 ){
+        if(drinks === 0 && money === 0 ){
           notifyReturn(drink , money);
         }
         else{

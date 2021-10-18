@@ -5,19 +5,12 @@ services:
     build:
       context: ./server
       dockerfile: Dockerfile
-    image: myapp-server
-    container_name: myapp-node-server
-    command: /usr/src/app/node_modules/.bin/nodemon server.js
-    volumes:
-      - ./server/:/usr/src/app
-      - /usr/src/app/node_modules
+    image: drink-vendor-server
+    container_name: drink-vendor-node-server
     ports:
       - "4000:4000"
     depends_on:
       - mongo
-    env_file: ./server/.env
-    environment:
-      - NODE_ENV=development
     networks:
       - app-network
   mongo:
@@ -32,12 +25,9 @@ services:
     build:
       context: ./client
       dockerfile: Dockerfile
-    image: myapp-client
-    container_name: myapp-react-client
-    command: npm start
-    volumes:
-      - ./client/:/usr/app
-      - /usr/app/node_modules
+    image: drink-vendor-client
+    container_name: drink-vendor-react-client
+    command: yarn start
     depends_on:
       - server
     ports:
