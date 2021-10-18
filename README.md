@@ -1,17 +1,17 @@
 ## Drink Vending Machine
+Summary:
+- Coke, Pepsi, Dew are the drinks
+- Fund is person's assumed Money to spend
+- Income is Machine's earning
+- Units are respective drinks number of items left
 
--Coke, Pepsi, Dew are the drinks
--Fund is person's assumed Money to spend
--Income is Machine's earning
--Units are respective drinks number of items left
-
--Put the coins in textfield
-  -Click on the button to buy the respective drink
-  -Higher coin result in purchase of exact drinks and Change return
-  -Insuffiecient fund will result in Unable to buy drink
-  -Drinks can be return & refund one at a time only
-  -Machine's income will deduct and persons fund will increase
-  -If more drinks are returned than actual vending windraw, server error will occur
+- Put the coins in textfield
+- Click on the button to buy the respective drink
+- Higher coin result in purchase of exact drinks and Change return
+- Insuffiecient fund will result in Unable to buy drink
+- Drinks can be return & refund one at a time only
+- Machine's income will deduct and persons fund will increase
+- If more drinks are returned than actual vending windraw, server error will occur
 
 
 Requirements:
