@@ -1,11 +1,3 @@
-interface ITodo {
-    _id: string
-    name: string
-    description: string
-    status: boolean
-    createdAt?: string
-    updatedAt?: string
-}
 
 interface IDrinks {
     _id: string,
@@ -19,20 +11,9 @@ interface IDrinks {
     updatedAt?: string
 }
 
-type TodoProps = {
-    todo: ITodo
-}
-
 type DrinksProps = {
     drink: IDrinks
 }
-
-type ApiDataType = {
-    message: string
-    status: string
-    todos: ITodo[]
-    todo?: ITodo
-  }
 
 type DrinksApiDataType = {
     message: string
@@ -40,3 +21,7 @@ type DrinksApiDataType = {
     drinks: IDrinks[]
     drink?: IDrinks
   }
+
+type Error = {
+    error: any
+}

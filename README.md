@@ -1,4 +1,18 @@
 ## Drink Vending Machine
+
+Before you start: change mongo url in srver/src/app.ts & server/dist/js/app.js
+manual yarn start (mongo local installation or paste your mongo crv here)
+- sudo systemctl restart mongod
+- mongodb://localhost:27017/OutSideTechsolutions
+
+docker compose up start(change localhost into "mongo")
+-sudo systemctl stop mongod
+- mongodb://mongo:27017/OutSideTechsolutions
+
+```bash
+sudo docker-compose --build
+```
+
 Summary:
 - Coke, Pepsi, Dew are the drinks
 - Fund is person's assumed Money to spend

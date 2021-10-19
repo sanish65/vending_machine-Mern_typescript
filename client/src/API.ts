@@ -8,9 +8,8 @@ export const getDrinks = async (): Promise<AxiosResponse<DrinksApiDataType>> => 
       drinksUrl + '/drinks'
     )
     return drinks
-  } catch (error) {
-    console.log("error"+error);
-    throw new Error(error)
+  } catch (error ) {
+    throw new Error("error")
   }
 }
 
@@ -22,8 +21,7 @@ export const buyDrinksById = async ( data : object ): Promise<AxiosResponse<Drin
     )
     return drinks
   } catch (error) {
-    console.log("error"+error);
-    throw new Error(error)
+    throw new Error("error")
   }
 }
 
@@ -35,8 +33,7 @@ export const returnDrinksById = async ( data : object ): Promise<AxiosResponse<D
     )
     return drinks
   } catch (error) {
-    console.log("error"+error);
-    throw new Error(error)
+    throw new Error("error")
   }
 }
 export const getDrinksById = async ( id  : any ): Promise<AxiosResponse<DrinksApiDataType>> => {
@@ -46,8 +43,7 @@ export const getDrinksById = async ( id  : any ): Promise<AxiosResponse<DrinksAp
     )
     return drinks
   } catch (error) {
-    console.log("error"+error);
-    throw new Error(error)
+    throw new Error("error")
   }
 }
 
@@ -69,7 +65,7 @@ export const addDrinks = async (
     )
     return saveTodo
   } catch (error) {
-    throw new Error(error);
+    throw new Error("error");
   }
 }
 
@@ -86,7 +82,7 @@ export const updateDrinks = async (
     )
     return updatedDrinks
   } catch (error) {
-    throw new Error(error)
+    throw new Error("error")
   }
 }
 
@@ -99,6 +95,6 @@ export const deleteDrinks = async (
     )
     return deletedDrinks
   } catch (error) {
-    throw new Error(error)
+    throw new Error("error")
   }
 }

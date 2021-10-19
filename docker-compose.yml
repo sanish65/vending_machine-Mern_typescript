@@ -22,6 +22,8 @@ services:
     networks:
       - app-network
   client:
+    stdin_open: true
+    tty: true
     build:
       context: ./client
       dockerfile: Dockerfile
